@@ -8,5 +8,5 @@ build = "build.rs"
 [dependencies]
 
 [build-dependencies]
-bindgen = "0.53"
+bindgen = "0.58.1"
 
