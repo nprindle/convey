@@ -125,6 +125,13 @@ where
         ret
     }
 
+    /// New that provides a pull function within it, wrapped in a box
+    pub fn new_with_pull_box(pull_fn: Box<dyn FnMut(T, usize) + 'a>) -> Self {
+        let mut ret = ConveySession::new();
+        ret.pull_fn = Some(pull_fn);
+        ret
+    }
+
     /// pass through debug function
     pub fn debug(&self, val: bool) {
         self.convey.debug(val);
